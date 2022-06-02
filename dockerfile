@@ -32,6 +32,10 @@ from mcr.microsoft.com/dotnet/aspnet:6.0 as runtime
 
 workdir /app
 
+#copy the publish folder
+
+copy /publish ./
+
 
 entrypoint ["dotnet", "LeagueStoreApi.dll"]
 
