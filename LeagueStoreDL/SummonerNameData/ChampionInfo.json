@@ -1,0 +1,22 @@
+[
+  {
+    "Store": "Top",
+    "ChampionName": "Daruis",
+    "RPprice": "200"
+  },
+  {
+    "Store": "Top",
+    "ChampionName": "Irelia",
+    "RPprice": "400"
+  },
+  {
+    "Store": "ADC",
+    "ChampionName": "Vayne",
+    "RPprice": "1000"
+  },
+  {
+    "Store": "ADC",
+    "ChampionName": "Twitch",
+    "RPprice": "200"
+  }
+]
