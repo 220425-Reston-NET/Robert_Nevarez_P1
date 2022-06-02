@@ -42,4 +42,4 @@ entrypoint ["dotnet", "LeagueStoreApi.dll"]
 #expose to port 80
 expose 5000
 
-env ASPNETCORE_URLS=https://+:5000
+env ASPNETCORE_URLS=http://+:5000
