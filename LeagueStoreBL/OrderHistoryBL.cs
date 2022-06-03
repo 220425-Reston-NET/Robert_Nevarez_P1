@@ -10,14 +10,13 @@ namespace LeagueStoreBL
         {
             _Historyrepo = p_Historyrepo;
         }
-        public void NewOrderHistory(string p_Name, string p_ChampionName, int p_TotalBought, int p_TotalPrice, string p_Store)
+        public void NewOrderHistory(string p_ChampionName, int p_TotalBought, string p_Store, int p_SumID)
         {
             OrderHistory Allhistory = new OrderHistory();
-            Allhistory.Name = p_Name;
             Allhistory.ChampionName = p_ChampionName;
             Allhistory.TotalBought = p_TotalBought;
-            Allhistory.TotalPrice = p_TotalPrice;
             Allhistory.StoreName = p_Store;
+            Allhistory.SumID = p_SumID;
 
             _Historyrepo.Add(Allhistory);
         }

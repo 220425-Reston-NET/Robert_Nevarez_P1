@@ -52,6 +52,8 @@ namespace StoreRepo
                 {
                     //zero based index
                     listofSummoners.Add(new SummonerInfo(){
+
+                        SumID = reader.GetInt32(0),
                         Name = reader.GetString(1),
                         Phonenumber = reader.GetDouble(2),
                         Address = reader.GetString(3)
@@ -83,5 +85,6 @@ namespace StoreRepo
                 command.ExecuteNonQuery();
             }
         }
+
     }
 }

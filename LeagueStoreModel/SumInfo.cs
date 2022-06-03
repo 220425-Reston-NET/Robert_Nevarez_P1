@@ -41,6 +41,8 @@ namespace Summoner
         }   
            
         public string Address { get; set; }
+
+        public int SumID {get;set; }
         // public string UpdatedName {get;set;}
 
         public SummonerInfo()

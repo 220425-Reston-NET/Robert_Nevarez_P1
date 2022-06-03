@@ -86,5 +86,10 @@ namespace StoreRepo
         {
             throw new NotImplementedException();
         }
+
+        public void view(ChampionInfo p_resource)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -3,6 +3,7 @@ namespace Summoner
     public class OrderHistory
     {
        public string Name {get; set;}
+       public int SumID{get; set;}
        public string ChampionName{get;set;}
         public int TotalBought{get;set;}
        public int TotalPrice{get;set;}

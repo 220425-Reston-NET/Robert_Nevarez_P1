@@ -44,5 +44,17 @@ namespace LeagueStoreApi.Controllers
 
         }
     }
+    [HttpGet("ViewAccount")]
+    public IActionResult ViewAccount([FromQuery] string p_SumName)
+    {
+        try
+        {
+            return Ok(_SumInfo.Search(p_SumName));
+        }
+        catch (System.InvalidOperationException)
+        {
+            return NotFound("Summoner was not found");
+        }
+    }
     }
 }

@@ -31,5 +31,10 @@ namespace StoreRepo
         {
             throw new NotImplementedException();
         }
+
+        public void view(SummonerInfo p_resource)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

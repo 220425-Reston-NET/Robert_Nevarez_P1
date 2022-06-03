@@ -49,6 +49,10 @@ namespace LeagueStoreBL
                 //    FilteredListOfSummoners.Add(SumName);
                    return SumName;
                }
+            //    else
+            //    {
+            //     throw new InvalidOperationException ("Summoner Not Found!");
+            //    }
            }
 
                 return null;
@@ -66,6 +70,10 @@ namespace LeagueStoreBL
                 //    FilteredListOfSummoners.Add(SumName);
                    return SumName;
                }
+            //    else
+            //    {
+            //         throw new InvalidOperationException ("Summoner Not Found!");
+            //    }
            }
 
            return null;

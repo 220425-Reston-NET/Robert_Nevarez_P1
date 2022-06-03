@@ -15,5 +15,6 @@ namespace StoreRepo
         void update(T p_resource);
 
         void replenish(T p_resource);
+
     }
 }

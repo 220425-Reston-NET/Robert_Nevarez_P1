@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Environment.GetEnvironmentVariable("Connection_String")
+//builder.Configuration.GetConnectionString("Robert_Nevarez_Champion")
 
 // builder.Services.AddScoped<IRepository<OrderHistory>, SQLOrderHistoryRepo>(repo => new SQLOrderHistoryRepo(builder.Configuration.GetConnectionString("Robert_Nevarez_Champion")));
 // builder.Services.AddScoped<IOrderHistoryBL, OrderHistoryBL>();

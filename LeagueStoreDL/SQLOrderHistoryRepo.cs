@@ -13,18 +13,18 @@ namespace StoreRepo
         public void Add(OrderHistory p_resource)
         {
             string SQLquery = @"insert into OrderHistory
-                                values (@SumName, @ChampionName,@TotalBought,@TotalSpent,@StoreName";
+                                values (@ChampionName,@TotalBought,1,@StoreName,@SumID";
              using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();
 
                 SqlCommand command = new SqlCommand(SQLquery, con);
 
-                command.Parameters.AddWithValue("@SumName", p_resource.Name);
+
                 command.Parameters.AddWithValue("@ChampionName", p_resource.ChampionName);
                 command.Parameters.AddWithValue("@TotalBought", p_resource.TotalBought);
-                command.Parameters.AddWithValue("@TotalSpent", p_resource.TotalPrice);
                 command.Parameters.AddWithValue("@StoreName", p_resource.StoreName);
+                command.Parameters.AddWithValue("@SumID", p_resource.SumID);
 
                 command.ExecuteNonQuery();
 
@@ -65,5 +65,6 @@ namespace StoreRepo
         {
             throw new NotImplementedException();
         }
+
     }
 }
