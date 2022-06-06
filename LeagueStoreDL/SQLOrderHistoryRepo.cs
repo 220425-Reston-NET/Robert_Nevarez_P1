@@ -13,7 +13,7 @@ namespace StoreRepo
         public void Add(OrderHistory p_resource)
         {
             string SQLquery = @"insert into OrderHistory
-                                values (@ChampionName,@TotalBought,1,@StoreName,@SumID";
+                                values (@ChampionName,@TotalBought,1,@StoreName,@SumID);";
              using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();
@@ -32,8 +32,8 @@ namespace StoreRepo
         }
         public List<OrderHistory> GetAll()
         {
-            string SQLQuery = @"select * from OrderHistory
-                                where SumName = @SumName";
+            string SQLQuery = @"select o.SumID,s.SumName,o.TotalBought, o.TotalSpent, o.ChampionName, o.StoreName from OrderHistory o
+                                inner join Suminfo s on o.SumID = s.SumID;";
             List<OrderHistory> OrderHistory1 = new List<OrderHistory>();
             using (SqlConnection con = new SqlConnection(_connectionString))
             {
@@ -41,6 +41,7 @@ namespace StoreRepo
 
 
                 SqlCommand command = new SqlCommand(SQLQuery, con);
+                
 
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -50,11 +51,98 @@ namespace StoreRepo
                 {
                     //zero based index
                     OrderHistory1.Add(new OrderHistory(){
-                        Name = reader.GetString(0),
+                        SumID = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        TotalBought = reader.GetInt32(2),
+                        TotalPrice = reader.GetInt32(3),
+                        ChampionName = reader.GetString(4),
+                        StoreName = reader.GetString(5),
                     });
                 }
             return OrderHistory1;
                }   }
+
+        public List<OrderHistory> GetStoreHistory(string p_resource)
+        {
+            string SQLQuery = @"select o.SumID,s.SumName,o.TotalBought, o.TotalSpent, o.ChampionName, o.StoreName from OrderHistory o
+                                inner join Suminfo s on o.SumID = s.SumID
+                                Where o.StoreName = '@StoreName'";
+            List<OrderHistory> OrderHistory1 = new List<OrderHistory>();
+            
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+
+                con.Open();
+
+
+                SqlCommand command = new SqlCommand(SQLQuery, con);
+
+            
+
+                command.Parameters.AddWithValue("@StoreName", p_resource);
+
+
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                
+                while (reader.Read())
+                {
+                    //zero based index
+                    OrderHistory1.Add(new OrderHistory(){
+                        SumID = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        TotalBought = reader.GetInt32(2),
+                        TotalPrice = reader.GetInt32(3),
+                        ChampionName = reader.GetString(4),
+                        StoreName = reader.GetString(5),
+
+                    });
+                }
+            return OrderHistory1;
+               }
+        }
+
+        public List<OrderHistory> GetSumHistory(string p_resource)
+        {
+            string SQLQuery = @"select o.SumID,s.SumName,o.TotalBought, o.TotalSpent, o.ChampionName, o.StoreName from OrderHistory o
+                                inner join Suminfo s on o.SumID = s.SumID
+                                Where s.SumName = '@SumName'";
+            List<OrderHistory> OrderHistory1 = new List<OrderHistory>();
+            
+            using (SqlConnection con = new SqlConnection(_connectionString))
+            {
+
+                con.Open();
+
+
+                SqlCommand command = new SqlCommand(SQLQuery, con);
+
+            
+
+                command.Parameters.AddWithValue("@SumName", p_resource);
+
+
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                
+                while (reader.Read())
+                {
+                    //zero based index
+                    OrderHistory1.Add(new OrderHistory(){
+                        SumID = reader.GetInt32(0),
+                        Name = reader.GetString(1),
+                        TotalBought = reader.GetInt32(2),
+                        TotalPrice = reader.GetInt32(3),
+                        ChampionName = reader.GetString(4),
+                        StoreName = reader.GetString(5),
+
+                    });
+                }
+            return OrderHistory1;
+               }
+        }
 
         public void replenish(OrderHistory p_resource)
         {

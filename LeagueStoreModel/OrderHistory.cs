@@ -8,7 +8,6 @@ namespace Summoner
         public int TotalBought{get;set;}
        public int TotalPrice{get;set;}
        public string StoreName{get;set;}
-    //    SummonerInfo Connection =  new SummonerInfo();
 
         public OrderHistory()
         {

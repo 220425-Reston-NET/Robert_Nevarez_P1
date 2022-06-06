@@ -20,5 +20,35 @@ namespace LeagueStoreBL
 
             _Historyrepo.Add(Allhistory);
         }
+
+        public List<OrderHistory> StoreOrderHistory(string p_Store)
+        {
+            List<OrderHistory> currentorderhistory = _Historyrepo.GetAll();
+            List<OrderHistory> filteredorderhistory = new List<OrderHistory>();
+            foreach (OrderHistory History in currentorderhistory)
+            {
+
+                if (History.StoreName == p_Store)
+                {
+                    filteredorderhistory.Add(History);
+                }
+            }
+            return filteredorderhistory;
+        }
+
+        public List<OrderHistory> SumOrderHistory(string p_SumName)
+        {
+            List<OrderHistory> currentorderhistory = _Historyrepo.GetAll();
+            List<OrderHistory> filteredorderhistory = new List<OrderHistory>();
+            foreach (OrderHistory History in currentorderhistory)
+            {
+
+                if (History.Name == p_SumName)
+                {
+                    filteredorderhistory.Add(History);
+                }
+            }
+            return filteredorderhistory;
+        }
     }
 }

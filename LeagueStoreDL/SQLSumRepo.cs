@@ -63,6 +63,16 @@ namespace StoreRepo
             }
         }
 
+        public List<SummonerInfo> GetStoreHistory(string p_resource)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<SummonerInfo> GetSumHistory(string p_resource)
+        {
+            throw new NotImplementedException();
+        }
+
         public void replenish(SummonerInfo p_resource)
         {
             throw new NotImplementedException();

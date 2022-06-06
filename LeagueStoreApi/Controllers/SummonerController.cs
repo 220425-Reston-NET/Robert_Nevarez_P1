@@ -15,13 +15,17 @@ namespace LeagueStoreApi.Controllers
     public class SummonerController : ControllerBase
     {
         private ILeagueStoreBL<SummonerInfo> _SumInfo;
+        private IOrderHistoryBL _SumOrder;
+        private IStoreItemsBL _Inventory;
 
-        public SummonerController(ILeagueStoreBL<SummonerInfo> sumInfo)
+        public SummonerController(ILeagueStoreBL<SummonerInfo> sumInfo, IOrderHistoryBL sumOrder, IStoreItemsBL inventory)
         {
             _SumInfo = sumInfo;
+            _SumOrder = sumOrder;
+            _Inventory = inventory;
         }
-    
-    [HttpPost("AddAccount")]
+
+        [HttpPost("AddAccount")]
     public IActionResult AddSummoner([FromBody] SummonerInfo p_SumInfo)
     {
         try
@@ -50,6 +54,21 @@ namespace LeagueStoreApi.Controllers
         try
         {
             return Ok(_SumInfo.Search(p_SumName));
+        }
+        catch (System.InvalidOperationException)
+        {
+            return NotFound("Summoner was not found");
+        }
+    }
+    [HttpPut("PlaceOrder")]
+    public IActionResult PlaceOrder([FromQuery] string p_ChampionName,[FromQuery] int p_TotalBought,[FromQuery] string p_Store,[FromQuery] int p_SumID, int p_ChampionId)
+    {
+        try
+        {
+
+            _SumOrder.NewOrderHistory(p_ChampionName,p_TotalBought,p_Store,p_SumID);
+            _Inventory.UpdateInventory(p_ChampionId,Convert.ToByte(p_TotalBought));
+            return Ok("Order was succesfully placed!");
         }
         catch (System.InvalidOperationException)
         {

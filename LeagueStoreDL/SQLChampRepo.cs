@@ -77,6 +77,16 @@ namespace StoreRepo
             }
         }
 
+        public List<ChampionInfo> GetStoreHistory(string p_resource)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ChampionInfo> GetSumHistory(string p_resource)
+        {
+            throw new NotImplementedException();
+        }
+
         public void replenish(ChampionInfo p_resource)
         {
             throw new NotImplementedException();
