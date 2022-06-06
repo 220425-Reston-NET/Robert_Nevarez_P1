@@ -6,7 +6,7 @@ namespace LeagueStoreBL
     public class SearchChampionBL : ILeagueStoreBL<ChampionInfo>
     {
          //==============================Dependecy Injection=========================
-            private IRepository<ChampionInfo> _ChampRepo;
+            private readonly IRepository<ChampionInfo> _ChampRepo;
             public SearchChampionBL(IRepository<ChampionInfo> p_ChampRepo)
             {
                 _ChampRepo = p_ChampRepo;
@@ -21,7 +21,7 @@ namespace LeagueStoreBL
             }
             else
             {
-                throw new Exception ("Champion already exist");
+                throw new InvalidOperationException ("Champion already exist");
             }
 
         }
@@ -33,18 +33,6 @@ namespace LeagueStoreBL
 
         public ChampionInfo Search(string p_usernameName)
         {
-        //     List<ChampionInfo> CurrentListOfChampions = _ChampRepo.GetAll(); 
-
-        //     foreach (ChampionInfo ChampName in CurrentListOfChampions)
-        //    {
-
-        //        if (ChampName.ChampionName == p_usernameName)
-        //        {
-        //            return ChampName;
-        //        }
-        //    }
-
-        //    return null;;
             return _ChampRepo.GetAll().First(ChampionInfo => ChampionInfo.ChampionName == p_usernameName);
         }
 

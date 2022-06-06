@@ -5,7 +5,7 @@ namespace LeagueStoreBL
 {
     public class OrderHistoryBL : IOrderHistoryBL
     {
-        private IRepository<OrderHistory> _Historyrepo;
+        private readonly IRepository<OrderHistory> _Historyrepo;
         public OrderHistoryBL(IRepository<OrderHistory> p_Historyrepo)
         {
             _Historyrepo = p_Historyrepo;

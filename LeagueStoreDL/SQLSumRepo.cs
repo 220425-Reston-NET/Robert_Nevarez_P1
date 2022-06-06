@@ -6,7 +6,7 @@ namespace StoreRepo
     public class SQLSumRepo : IRepository<SummonerInfo>
     {
 
-        private string _connectionString;
+        private readonly string _connectionString;
 
         //============================================
         public SQLSumRepo(string p_connectionString)

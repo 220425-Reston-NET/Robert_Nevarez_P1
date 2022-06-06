@@ -5,7 +5,7 @@ namespace StoreRepo
 {
     public class SQLOrderHistoryRepo : IRepository<OrderHistory>
     {
-        private string _connectionString;
+        private readonly string _connectionString;
         public SQLOrderHistoryRepo(string p_connectionString)
         {
             this._connectionString = p_connectionString;

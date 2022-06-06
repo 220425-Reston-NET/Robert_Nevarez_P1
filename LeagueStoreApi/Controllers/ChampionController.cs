@@ -14,15 +14,11 @@ namespace LeagueStoreApi.Controllers
     [ApiController]
     public class ChampionController : ControllerBase
     {
-        private ILeagueStoreBL<ChampionInfo> _leaguebl;
-        private IStoreItemsBL _leaguebl2;
-        private IRPBL _leagueblrp;
+        private readonly ILeagueStoreBL<ChampionInfo>  _leaguebl;
 
-        public ChampionController(ILeagueStoreBL<ChampionInfo> leaguebl, IStoreItemsBL leaguebl2, IRPBL leagueblrp)
+        public ChampionController(ILeagueStoreBL<ChampionInfo> leaguebl)
         {
             _leaguebl = leaguebl;
-            _leaguebl2 = leaguebl2;
-            _leagueblrp = leagueblrp;
         }
         //Data annotation to indicate what type of HTTP verb it is
         //This is an action of a controller

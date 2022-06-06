@@ -5,7 +5,7 @@ namespace StoreRepo
 {
     public class ChampionInfoRepo : IRepository<ChampionInfo>
     {
-        private string _filepath2 = "../LeagueStoreDL/SummonerNameData/ChampionInfo.json";
+        private readonly string _filepath2 = "../LeagueStoreDL/SummonerNameData/ChampionInfo.json";
         public void Add(ChampionInfo p_Champ)
         {
             List<ChampionInfo> listofChampions = GetAll();

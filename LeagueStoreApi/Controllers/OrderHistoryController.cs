@@ -15,7 +15,7 @@ namespace LeagueStoreApi.Controllers
     public class OrderHistoryController : ControllerBase
     {
         
-        private IOrderHistoryBL _neworderhistory;
+        private readonly IOrderHistoryBL _neworderhistory;
 
         public OrderHistoryController(IOrderHistoryBL neworderhistory)
         {

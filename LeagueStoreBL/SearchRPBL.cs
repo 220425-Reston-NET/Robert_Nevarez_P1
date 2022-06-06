@@ -7,7 +7,7 @@ namespace LeagueStoreBL
     public class SearchRPBL : IRPBL
     {
         //==============================Dependecy Injection=========================
-            private IRepository<ChampionInfo> _ChampRepoRP;
+            private readonly IRepository<ChampionInfo> _ChampRepoRP;
             public SearchRPBL(IRepository<ChampionInfo> p_ChampRepoRP)
             {
                 _ChampRepoRP = p_ChampRepoRP;

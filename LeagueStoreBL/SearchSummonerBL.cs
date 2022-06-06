@@ -7,7 +7,7 @@ namespace LeagueStoreBL
     {
         
         //==============================Dependecy Injection=========================
-            private IRepository<SummonerInfo> _SummonerRepo;
+            private readonly IRepository<SummonerInfo> _SummonerRepo;
             public SearchSummonerBL(IRepository<SummonerInfo> p_SumInfo)
             {
                 _SummonerRepo = p_SumInfo;
@@ -32,27 +32,23 @@ namespace LeagueStoreBL
             throw new NotImplementedException();
         }
 
-        public SummonerInfo Search(string p_Name)
+        public SummonerInfo Search(string p_usernameName)
         {  
             try
             {
-                double phone = Convert.ToDouble(p_Name);
+                double phone = Convert.ToDouble(p_usernameName);
 
                 List<SummonerInfo> CurrentListOfSummoners = _SummonerRepo.GetAll();
-                // List<SummonerInfo> FilteredListOfSummoners = new List<SummonerInfo>();
 
             foreach (SummonerInfo SumName in CurrentListOfSummoners)
            {
 
                if (SumName.Phonenumber == phone)
                {
-                //    FilteredListOfSummoners.Add(SumName);
+
                    return SumName;
                }
-            //    else
-            //    {
-            //     throw new InvalidOperationException ("Summoner Not Found!");
-            //    }
+       
            }
 
                 return null;
@@ -60,20 +56,15 @@ namespace LeagueStoreBL
             catch (FormatException)
             {
                 List<SummonerInfo> CurrentListOfSummoners = _SummonerRepo.GetAll();
-                // List<SummonerInfo> FilteredListOfSummoners = new List<SummonerInfo>();
+
 
             foreach (SummonerInfo SumName in CurrentListOfSummoners)
            {
 
-               if (SumName.Name == p_Name)
+               if (SumName.Name == p_usernameName)
                {
-                //    FilteredListOfSummoners.Add(SumName);
                    return SumName;
                }
-            //    else
-            //    {
-            //         throw new InvalidOperationException ("Summoner Not Found!");
-            //    }
            }
 
            return null;

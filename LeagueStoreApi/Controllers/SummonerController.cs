@@ -14,9 +14,9 @@ namespace LeagueStoreApi.Controllers
     [ApiController]
     public class SummonerController : ControllerBase
     {
-        private ILeagueStoreBL<SummonerInfo> _SumInfo;
-        private IOrderHistoryBL _SumOrder;
-        private IStoreItemsBL _Inventory;
+        private readonly ILeagueStoreBL<SummonerInfo> _SumInfo;
+        private readonly IOrderHistoryBL _SumOrder;
+        private readonly IStoreItemsBL _Inventory;
 
         public SummonerController(ILeagueStoreBL<SummonerInfo> sumInfo, IOrderHistoryBL sumOrder, IStoreItemsBL inventory)
         {

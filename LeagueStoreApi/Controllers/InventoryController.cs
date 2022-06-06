@@ -14,7 +14,7 @@ namespace LeagueStoreApi.Controllers
     [ApiController]
     public class InventoryController : ControllerBase
     {
-        private IStoreItemsBL _leaguebl2;
+        private readonly IStoreItemsBL _leaguebl2;
 
         public InventoryController(IStoreItemsBL leaguebl2)
         {

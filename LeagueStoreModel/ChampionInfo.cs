@@ -7,7 +7,6 @@ namespace Summoner
         public string ChampionName { get ; set ;}
         public int RPprice { get ; set ; }
 
-        public List<ChampionInfoInventory> Inventories = new List<ChampionInfoInventory>();
 
 
         public ChampionInfo()
@@ -15,7 +14,6 @@ namespace Summoner
         Store = "";
         ChampionName = "";
         RPprice = 0;
-        Inventories = new List<ChampionInfoInventory>();
 
         }
         public override string ToString()

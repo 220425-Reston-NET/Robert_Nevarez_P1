@@ -5,7 +5,7 @@ namespace StoreRepo
 {
     public class SummonerInfoRepo : IRepository<SummonerInfo>
     {
-        private string _filepath1 = "../LeagueStoreDL/SummonerNameData/SummonerInfo.json";
+        private readonly string _filepath1 = "../LeagueStoreDL/SummonerNameData/SummonerInfo.json";
         public void Add(SummonerInfo p_username)
         {
             List<SummonerInfo> listofsummoners = GetAll();

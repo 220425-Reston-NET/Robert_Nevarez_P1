@@ -6,7 +6,7 @@ namespace LeagueStoreBL
     public class StoreItemsBL : IStoreItemsBL
     {
             //==============================Dependecy Injection=========================
-            private IRepository<ChampionInfoInventory> _StoreSearch;
+            private readonly IRepository<ChampionInfoInventory> _StoreSearch;
             public StoreItemsBL(IRepository<ChampionInfoInventory> p_StoreSearch)
             {
                 _StoreSearch = p_StoreSearch;

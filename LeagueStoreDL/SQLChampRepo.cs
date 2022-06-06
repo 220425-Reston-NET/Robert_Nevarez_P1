@@ -5,7 +5,7 @@ namespace StoreRepo
 {
     public class SQLChampRepo : IRepository<ChampionInfo>
     {
-        private string _connectionString;
+        private readonly string _connectionString;
 
         //============================================
         public SQLChampRepo(string p_connectionString)
