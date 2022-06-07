@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace LeagueStoreApi.Controllers
 {
@@ -30,6 +31,8 @@ namespace LeagueStoreApi.Controllers
     {
         try
         {
+            Log.Information("User added an account in the following details " + p_SumInfo.ToString());
+
             _SumInfo.Add(p_SumInfo);
             return Created("Summoner Profile was created!", p_SumInfo);
         }
@@ -53,18 +56,24 @@ namespace LeagueStoreApi.Controllers
     {
         try
         {
+            Log.Information("User viewed account " + p_SumName);
+
             return Ok(_SumInfo.Search(p_SumName));
         }
         catch (System.InvalidOperationException)
         {
+            Log.Warning("User tried to search summoner " + p_SumName + " however that summoner does not exist!");
+
             return NotFound("Summoner was not found");
         }
     }
-    [HttpPut("PlaceOrder")]
-    public IActionResult PlaceOrder([FromQuery] string p_ChampionName,[FromQuery] int p_TotalBought,[FromQuery] string p_Store,[FromQuery] int p_SumID, int p_ChampionId)
+    [HttpPost("PlaceOrder")]
+    public IActionResult PlaceOrder([FromQuery] int p_SumID, string p_Store, int p_ChampionId, string p_ChampionName, int p_TotalBought)
     {
         try
         {
+            Log.Information("User placed on order on following details SumID: " + p_SumID + "\nStore: " + p_Store + "\nChampionID: " + p_ChampionId + "\nChampion Name: " + p_ChampionName + "\nTotal bought: " + p_TotalBought);
+            Log.Information("User also updated inventory in " + p_Store + " store. User bought " + p_TotalBought + " " + p_ChampionName);
 
             _SumOrder.NewOrderHistory(p_ChampionName,p_TotalBought,p_Store,p_SumID);
             _Inventory.UpdateInventory(p_ChampionId,Convert.ToByte(p_TotalBought));
@@ -72,6 +81,8 @@ namespace LeagueStoreApi.Controllers
         }
         catch (System.InvalidOperationException)
         {
+            Log.Warning("User tried to place order, something went wrong!");
+            
             return NotFound("Summoner was not found");
         }
     }

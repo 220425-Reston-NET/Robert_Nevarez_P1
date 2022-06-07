@@ -1,0 +1,22 @@
+2022-06-07 10:19:56.010 -04:00 [INF] User is replenishing inventory for ChampionID 20 for the amount of 3
+2022-06-07 10:20:12.274 -04:00 [INF] User searched all Champions.
+2022-06-07 10:20:37.232 -04:00 [INF] User is replenishing inventory for ChampionID 120 for the amount of 3
+2022-06-07 10:23:21.408 -04:00 [INF] User is replenishing inventory for ChampionID 14 for the amount of 3
+2022-06-07 10:23:35.089 -04:00 [INF] User is replenishing inventory for ChampionID 15 for the amount of 2
+2022-06-07 10:41:04.442 -04:00 [INF] User is replenishing inventory for ChampionID 50 for the amount of 122
+2022-06-07 10:41:13.741 -04:00 [INF] User is replenishing inventory for ChampionID -2 for the amount of 122
+2022-06-07 10:41:34.002 -04:00 [INF] User is replenishing inventory for ChampionID -2 for the amount of 10
+2022-06-07 10:52:22.346 -04:00 [INF] User tried to search order history for Nevark
+2022-06-07 10:52:29.936 -04:00 [INF] User tried to search order history for Lilililil
+2022-06-07 10:52:37.622 -04:00 [INF] User tried to search order history for 212343
+2022-06-07 10:52:45.721 -04:00 [INF] User tried to search order history for Help
+2022-06-07 10:52:48.676 -04:00 [INF] User tried to search order history for 123
+2022-06-07 12:20:08.215 -04:00 [INF] User tried to search order history for Nevark
+2022-06-07 12:20:14.150 -04:00 [INF] User tried to search order history for Lililil
+2022-06-07 12:20:14.179 -04:00 [WRN] User searched order history for Lililil however that user does not exist!
+2022-06-07 12:20:22.001 -04:00 [INF] User tried to search order history for Lilgosu
+2022-06-07 12:20:22.026 -04:00 [WRN] User searched order history for Lilgosu however that user does not exist!
+2022-06-07 12:20:35.357 -04:00 [INF] User tried to search order history for Lilteddy
+2022-06-07 12:20:35.390 -04:00 [WRN] User searched order history for Lilteddy however that user does not exist!
+2022-06-07 12:20:42.397 -04:00 [INF] User tried to search order history for Jon Infante
+2022-06-07 12:20:42.426 -04:00 [WRN] User searched order history for Jon Infante however that user does not exist!

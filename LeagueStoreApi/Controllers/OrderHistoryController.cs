@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace LeagueStoreApi.Controllers
 {
@@ -28,11 +29,14 @@ namespace LeagueStoreApi.Controllers
         {
             try
             {
+                Log.Information("User tried to search order history for " + _SumName);
+
                 return Ok(_neworderhistory.SumOrderHistory(_SumName));
             }
             catch (System.InvalidOperationException)
             {
-                
+                Log.Warning("User searched order history for " + _SumName + " however that user does not exist!");
+
                 return NotFound("Summoner was not found");
             }
         }
@@ -43,12 +47,15 @@ namespace LeagueStoreApi.Controllers
         {
             try
             {
+                Log.Information("User tried to search store order history for " + _StoreName);
+
                 return Ok(_neworderhistory.StoreOrderHistory(_StoreName));
             }
             catch (System.InvalidOperationException)
             {
-                
-                return NotFound("Summoner was not found");
+                Log.Warning("User searched store order history for " + _StoreName + " however that store does not exist!");
+
+                return NotFound("Store was not found");
             }
         }
 

@@ -31,9 +31,10 @@ namespace LeagueStoreBL
                 if (History.StoreName == p_Store)
                 {
                     filteredorderhistory.Add(History);
+                    return filteredorderhistory;
                 }
             }
-            return filteredorderhistory;
+            throw new InvalidOperationException();
         }
 
         public List<OrderHistory> SumOrderHistory(string p_SumName)
@@ -46,9 +47,12 @@ namespace LeagueStoreBL
                 if (History.Name == p_SumName)
                 {
                     filteredorderhistory.Add(History);
+                    return filteredorderhistory;
                 }
+                
             }
-            return filteredorderhistory;
+            throw new InvalidOperationException();
+            
         }
     }
 }

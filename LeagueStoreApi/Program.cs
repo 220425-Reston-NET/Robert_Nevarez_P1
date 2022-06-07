@@ -1,9 +1,12 @@
 using LeagueStoreBL;
+using Serilog;
 using StoreRepo;
 using Summoner;
 
 var builder = WebApplication.CreateBuilder(args);
-
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("./logs/user.txt")
+    .CreateLogger();
 // Add services to the container.
 
 builder.Services.AddControllers();

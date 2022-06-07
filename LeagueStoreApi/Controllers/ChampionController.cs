@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Serilog;
 
 namespace LeagueStoreApi.Controllers
 {
@@ -30,12 +31,16 @@ namespace LeagueStoreApi.Controllers
             try
             {  
                 List<ChampionInfo> listofcurrrentchampion = _leaguebl.GetAllChampion();
+
+                Log.Information("User searched all Champions.");
+                
                 return Ok(listofcurrrentchampion);
                 
             }
             catch (SqlException)
             {
-                
+                Log.Warning("A problem occurred");
+
                 return Conflict();
             }
 
@@ -47,11 +52,14 @@ namespace LeagueStoreApi.Controllers
         {
             try
             {
+                Log.Information("User tried to search " + _ChampName);
+
                 return Ok(_leaguebl.Search(_ChampName));
             }
             catch (System.InvalidOperationException)
             {
-                
+                Log.Warning("User searched" + _ChampName + "and that champion was not found");
+
                 return NotFound("Champion was not found");
             }
         }
