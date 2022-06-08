@@ -111,3 +111,4 @@ Total bought: 2
 2022-06-08 10:12:07.349 -04:00 [INF] User tried to search order history for Lilgosu
 2022-06-08 10:12:21.247 -04:00 [INF] User tried to search Nami
 2022-06-08 10:15:23.765 -04:00 [INF] User tried to search Nami
+2022-06-08 10:53:49.305 -04:00 [INF] User tried to search store order history for Support
