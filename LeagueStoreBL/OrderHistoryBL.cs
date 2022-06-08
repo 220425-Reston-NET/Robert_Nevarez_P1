@@ -70,10 +70,10 @@ namespace LeagueStoreBL
                 {
                     filteredorderhistory.Add(History);
                 }
-                else
-                {
-                    throw new InvalidOperationException();
-                }
+                // else
+                // {
+                //     throw new InvalidOperationException();
+                // }
             }
             return filteredorderhistory;
         }
@@ -90,10 +90,10 @@ namespace LeagueStoreBL
                     filteredorderhistory.Add(History);
                     
                 }
-                else 
-                {
-                    throw new InvalidOperationException();
-                }
+                // else 
+                // {
+                //     throw new InvalidOperationException();
+                // }
                 
             }
             return filteredorderhistory;

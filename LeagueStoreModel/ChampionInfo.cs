@@ -6,6 +6,7 @@ namespace Summoner
         public string Store { get ; set; }
         public string ChampionName { get ; set ;}
         public int RPprice { get ; set ; }
+        public int ChampionID{get ; set; }
 
 
 

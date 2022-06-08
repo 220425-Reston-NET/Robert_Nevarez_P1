@@ -68,6 +68,7 @@ namespace StoreRepo
                 {
                     //zero based index
                     listofChampion.Add(new ChampionInfo(){
+                        ChampionID = reader.GetInt32(0),
                         Store = reader.GetString(8),
                         ChampionName = reader.GetString(1),
                         RPprice = reader.GetInt32(2),

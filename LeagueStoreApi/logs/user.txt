@@ -77,3 +77,36 @@ Total bought: 7
 2022-06-07 23:24:24.859 -04:00 [INF] User tried to search order history for Nevark
 2022-06-07 23:24:46.777 -04:00 [INF] User is replenishing inventory for ChampionID 15 for the amount of 7
 2022-06-07 23:24:53.978 -04:00 [INF] User tried to search store Support
+2022-06-08 10:02:18.190 -04:00 [INF] User viewed account Nevark
+2022-06-08 10:02:55.529 -04:00 [INF] User tried to search store Top
+2022-06-08 10:03:10.291 -04:00 [INF] User placed on order on following details SumID: 2
+Store: Top
+ChampionID: 3
+Champion Name: Gwen
+Total bought: 2
+2022-06-08 10:03:10.291 -04:00 [INF] User also updated inventory in Top store. User bought 2 Gwen
+2022-06-08 10:03:38.256 -04:00 [INF] User tried to search order history for Lilgosu
+2022-06-08 10:03:38.290 -04:00 [WRN] User searched order history for Lilgosu however that user does not exist!
+2022-06-08 10:04:02.020 -04:00 [INF] User viewed account Lilgosu
+2022-06-08 10:04:13.821 -04:00 [INF] User tried to search order history for Lilgosu
+2022-06-08 10:04:13.856 -04:00 [WRN] User searched order history for Lilgosu however that user does not exist!
+2022-06-08 10:06:41.437 -04:00 [INF] User tried to search order history for Lilgosu
+2022-06-08 10:06:41.467 -04:00 [WRN] User searched order history for Lilgosu however that user does not exist!
+2022-06-08 10:06:48.104 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:06:48.127 -04:00 [WRN] User searched order history for Nevark however that user does not exist!
+2022-06-08 10:06:49.434 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:06:49.458 -04:00 [WRN] User searched order history for Nevark however that user does not exist!
+2022-06-08 10:06:49.816 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:06:49.836 -04:00 [WRN] User searched order history for Nevark however that user does not exist!
+2022-06-08 10:09:07.075 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:09:07.099 -04:00 [WRN] User searched order history for Nevark however that user does not exist!
+2022-06-08 10:09:15.098 -04:00 [INF] User tried to search store order history for Support
+2022-06-08 10:09:15.121 -04:00 [WRN] User searched store order history for Support however that store does not exist!
+2022-06-08 10:10:20.220 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:10:20.503 -04:00 [WRN] User searched order history for Nevark however that user does not exist!
+2022-06-08 10:10:29.761 -04:00 [INF] User tried to search store order history for Support
+2022-06-08 10:10:29.787 -04:00 [WRN] User searched store order history for Support however that store does not exist!
+2022-06-08 10:11:32.946 -04:00 [INF] User tried to search order history for Nevark
+2022-06-08 10:11:45.096 -04:00 [INF] User tried to search store order history for Support
+2022-06-08 10:12:07.349 -04:00 [INF] User tried to search order history for Lilgosu
+2022-06-08 10:12:21.247 -04:00 [INF] User tried to search Nami
