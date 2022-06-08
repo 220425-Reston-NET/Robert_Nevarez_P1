@@ -8,5 +8,7 @@ namespace LeagueStoreBL
         public List<OrderHistory> SumOrderHistory(string p_SumName);
 
         public List<OrderHistory> StoreOrderHistory(string p_Store);
+
+         public List<OrderHistory> GetAllHistory();
     }
 }

@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Summoner
 {
 
@@ -14,9 +16,13 @@ namespace Summoner
          
          set
           { 
-              if (value >= 0)
+              if (value > 0)
               {
                   _ChampionInventory = value;
+              }
+              else
+              {
+                  throw new ValidationException("Must be greater than 0");
               }
           }
         } 

@@ -13,7 +13,7 @@ namespace StoreRepo
         public void Add(OrderHistory p_resource)
         {
             string SQLquery = @"insert into OrderHistory
-                                values (@ChampionName,@TotalBought,1,@StoreName,@SumID);";
+                                values (@ChampionName,@TotalBought,@TotalPrice,@StoreName,@SumID);";
              using (SqlConnection con = new SqlConnection(_connectionString))
             {
                 con.Open();
@@ -25,6 +25,7 @@ namespace StoreRepo
                 command.Parameters.AddWithValue("@TotalBought", p_resource.TotalBought);
                 command.Parameters.AddWithValue("@StoreName", p_resource.StoreName);
                 command.Parameters.AddWithValue("@SumID", p_resource.SumID);
+                command.Parameters.AddWithValue("@TotalPrice", p_resource.TotalPrice);
 
                 command.ExecuteNonQuery();
 

@@ -31,7 +31,10 @@ namespace LeagueStoreApi.Controllers
             {
                 Log.Information("User tried to search order history for " + _SumName);
 
-                return Ok(_neworderhistory.SumOrderHistory(_SumName));
+                List<OrderHistory> Sumorderhistory = _neworderhistory.SumOrderHistory(_SumName);
+                
+
+                return Ok(Sumorderhistory);
             }
             catch (System.InvalidOperationException)
             {

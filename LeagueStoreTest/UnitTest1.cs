@@ -9,17 +9,17 @@ namespace LeagueStoreTest
         public void Summoner_Should_set_ValidData()
         {
             //Arrange
-            SummonerInfo Test1 = new SummonerInfo();
+            SummonerInfo Test2 = new SummonerInfo();
             double testphone = 1000000001;
             
 
             //Act
-            Test1.Phonenumber = testphone;
+            Test2.Phonenumber = testphone;
 
             //Assert
 
-            Assert.NotNull(Test1.Phonenumber);
-            Assert.Equal(testphone , Test1.Phonenumber);
+            Assert.NotNull(Test2.Phonenumber);
+            Assert.Equal(testphone , Test2.Phonenumber);
         }
 
         [Theory]
